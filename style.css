@@ -1,0 +1,34 @@
+body{
+    font-family: "BPG Nino Mtavruli", sans-serif;
+}
+
+.table-input{
+    text-align: end;
+}
+
+#alert-show{
+  transition: all 500ms;
+}
+#all-remove{
+  display:initial;
+  cursor: pointer;
+  font-size: 13px;
+  float: right;
+}
+#all-remove:hover{
+  font-size: 13px;
+  color: green;
+}
+.border-one{
+  border-radius: 5px 0 0 5px;
+}
+.border-two{
+  border-radius: 0 5px 5px 0;
+}
+tr{
+  border-color: white !important;
+}
+
+input::{
+  border-radius: 10px;
+}
