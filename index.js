@@ -1,4 +1,5 @@
-
+var key;
+var keyCode;
 var count = 0
 $(document).ready(function(){
     //Enter ღილაკით წერა
@@ -25,9 +26,9 @@ $(document).ready(function(){
 
         $('#show').append(data)
         //localStorage გასაღები 
-        var key  = Math.floor(Math.random() * 10000000)
-            localStorage.setItem(key,$('#text-here').val())
-        
+        key     = Math.floor(Math.random() * 10000000)
+        keyCode =   localStorage.setItem(key,$('#text-here').val())
+        $('#text-here').val('')
       }
       
       
@@ -37,16 +38,17 @@ $(document).ready(function(){
     $('#remove').click(function(){
         $('#show').find('input[name="record"]').each(function(){
             if($(this).is(':checked')){
-                $(this).parents("tr").remove();   
+                $(this).parents("tr").remove();  
+               $(this).parents( localStorage.removeItem(key)).remove()
                 --count            
             }
         })
     })
    $('#all-remove').click(function(){
         $('#show').find("tr").remove()
-        --count
+        localStorage.clear(keyCode)
+        count = 0
    })
 
 })
-
 
